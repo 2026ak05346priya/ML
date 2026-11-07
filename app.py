@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import joblib
+#import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import (
@@ -8,7 +8,10 @@ from sklearn.metrics import (
     recall_score, f1_score, matthews_corrcoef, 
     confusion_matrix, classification_report
 )
-
+try:
+    import joblib
+except ImportError:
+    from sklearn.externals import joblib
 st.set_page_config(page_title="ML Classifier Dashboard", layout="wide")
 
 st.title("📊 ML Model Evaluation Dashboard")
